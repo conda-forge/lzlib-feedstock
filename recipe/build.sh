@@ -9,5 +9,7 @@ set -o xtrace -o nounset -o pipefail -o errexit
     --libdir=${PREFIX}/lib \
     CC=${CC}
 
-make -j${CPU_COUNT} check
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
+    make -j${CPU_COUNT} check
+fi
 make -j${CPU_COUNT} install
