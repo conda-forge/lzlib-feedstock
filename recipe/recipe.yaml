@@ -1,5 +1,5 @@
 context:
-  version: 1.14
+  version: "1.15"
 
 package:
   name: lzlib
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://download.savannah.gnu.org/releases/lzip/lzlib/lzlib-${{ version }}.tar.gz
-  sha256: 5acac8714ed4f306020bae660dddce706e5f8a795863679037da9fe6bf4dcf6f
+  sha256: 06f9e9752fbe24fbad7870b4ad1d3c48a29b070ab45e1b6172fa1a7eca51baf9
   patches:
     - if: osx
       then: 0001-make-shared-lib-work-on-macOS.patch
