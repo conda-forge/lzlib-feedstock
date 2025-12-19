@@ -7,6 +7,7 @@ set -o xtrace -o nounset -o pipefail -o errexit
     --enable-shared \
     --prefix=${PREFIX} \
     --libdir=${PREFIX}/lib \
+    AR=${AR} \
     CC=${CC}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
